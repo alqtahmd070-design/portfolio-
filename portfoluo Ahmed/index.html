@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندس أحمد القط | Eng. Ahmed Elkot - Portfolio</title>
+    <meta name="description" content="Portfolio of Eng. Ahmed Elkot - MIS Student | UI/UX Designer | Data Analyst | Web Developer">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>👨‍💻</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav id="navbar">
+        <div class="logo">Ahmed<span>Elkot</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+            <li><a href="#about" data-i18n="nav_about">من أنا</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">المهارات</a></li>
+            <li><a href="#education" data-i18n="nav_education">التعليم والتدريب</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">المشاريع</a></li>
+            <li><a href="#certificates" data-i18n="nav_certificates">الشهادات</a></li>
+            <li><a href="#gallery" data-i18n="nav_gallery">لحظات مميزة</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">اتصل بي</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">EN</button>
+            <button id="menu-toggle" class="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <p class="hero-greeting" data-i18n="hero_greeting">مرحباً، أنا</p>
+            <h1><span data-i18n="hero_name">المهندس أحمد القط</span></h1>
+            <div class="typewriter" id="typewriter"></div>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">UI/UX Designer | Data Analyst | Web Developer</p>
+            <p class="hero-text" data-i18n="hero_desc">أصمم تجارب رقمية واضحة، أحلل البيانات لاستخراج رؤى مفيدة، وأطور حلول ويب تجمع بين التصميم والتقنية.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ahmed-elkot-84b5a4312" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@ahmeadelkot" target="_blank" rel="noopener" class="tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/@ahmedelkot-q8d" target="_blank" rel="noopener" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/share/1Cozss4Y8k/" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.figma.com/@ahmedmahmoudesm" target="_blank" rel="noopener noreferrer" class="figma" aria-label="Visit my Figma profile" title="Figma"><i class="fab fa-figma"></i></a>
+                <a href="https://t.me/+201202022003" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Contact me on Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/elkot.123?dlrf=NXg0aW1obGJhZ3Jx" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Follow me on Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/201202022003" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="Contact me on WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div class="hero-cta">
+                <button class="btn btn-primary" id="cv-open-btn"><i class="fas fa-file-pdf"></i> <span data-i18n="view_cv">عرض السيرة الذاتية</span></button>
+                <a href="#projects" class="btn btn-outline"><i class="fas fa-folder-open"></i> <span data-i18n="view_projects">المشاريع</span></a>
+                <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> <span data-i18n="contact_me">تواصل معي</span></a>
+            </div>
+        </div>
+        <div class="hero-image reveal">
+            <img id="profile-img" src="assets/images/profile/ahmed-elkot.jpeg" alt="المهندس أحمد القط" onerror="profileImgError(this)" onclick="openProfileLightbox()">
+            <div class="hero-img-hint"><i class="fas fa-expand"></i></div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+        <h2 class="section-title reveal" data-i18n="about_title">نبذة عني</h2>
+        <div class="about-grid">
+            <div class="about-main glass-card reveal">
+                <p data-i18n="about_p1">أنا المهندس أحمد القط، طالب في مجال نظم المعلومات الإدارية ومهتم بتطوير حلول رقمية تجمع بين التصميم والتقنية وتحليل البيانات.</p>
+                <p data-i18n="about_p2">أعمل على تطوير مهاراتي في UI/UX Design وتطوير الويب وتحليل البيانات، وأسعى إلى بناء تجارب رقمية بسيطة، عملية، وسهلة الاستخدام.</p>
+                <p data-i18n="about_p3">أهتم بفهم احتياجات المستخدم وتحويلها إلى واجهات واضحة ومنظمة، بالإضافة إلى تحليل البيانات واستخراج المعلومات التي تساعد على اتخاذ قرارات أفضل.</p>
+                <p data-i18n="about_p4">خلال رحلتي التعليمية والتدريبية شاركت في عدد من البرامج والدورات التدريبية في مجالات التكنولوجيا، UI/UX، تحليل البيانات، الذكاء الاصطناعي وتطوير البرمجيات.</p>
+                <p data-i18n="about_p5">هدفي هو تطوير نفسي باستمرار وبناء مشاريع حقيقية تجمع بين التصميم، البرمجة، وتحليل البيانات.</p>
+            </div>
+            <div class="about-cards">
+                <div class="glass-card about-card reveal">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3 data-i18n="about_card1_t">طالب MIS</h3>
+                    <p data-i18n="about_card1_d">أدرس نظم المعلومات الإدارية بالسنة الرابعة بمعهد العبور العالي للإدارة والحاسبات ونظم المعلومات.</p>
+                </div>
+                <div class="glass-card about-card reveal">
+                    <i class="fas fa-pen-ruler"></i>
+                    <h3 data-i18n="about_card2_t">شغف التصميم</h3>
+                    <p data-i18n="about_card2_d">مهتم بتصميم واجهات المستخدم وتجربة المستخدم، وتحويل احتياجات المستخدم إلى واجهات واضحة ومنظمة.</p>
+                </div>
+                <div class="glass-card about-card reveal">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-i18n="about_card3_t">تحليل البيانات</h3>
+                    <p data-i18n="about_card3_d">أحلل البيانات وأستخرج منها رؤى تدعم اتخاذ قرارات أفضل باستخدام Excel و Power BI و SQL.</p>
+                </div>
+                <div class="glass-card about-card reveal">
+                    <i class="fas fa-code"></i>
+                    <h3 data-i18n="about_card4_t">تطوير الويب</h3>
+                    <p data-i18n="about_card4_d">أبني تطبيقات ومواقع ويب حديثة تجمع بين التصميم والبرمجة وأعمال قواعد البيانات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills">
+        <h2 class="section-title reveal" data-i18n="skills_title">المهارات والتقنيات</h2>
+        <div class="skills-cats" id="skills-cats"></div>
+    </section>
+
+    <!-- ================= EDUCATION & TRAINING ================= -->
+    <section id="education">
+        <h2 class="section-title reveal" data-i18n="edu_title">التعليم والتدريب</h2>
+        <div class="edu-grid">
+            <div class="glass-card edu-card reveal">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <span class="edu-badge" data-i18n="edu_badge_edu">تعليم</span>
+                <h3 data-i18n="edu_school">معهد العبور العالي للإدارة والحاسبات ونظم المعلومات</h3>
+                <p class="edu-major" data-i18n="edu_major">نظم المعلومات الإدارية (MIS)</p>
+                <p class="edu-status" data-i18n="edu_status">طالب — السنة الرابعة</p>
+            </div>
+            <div class="glass-card edu-card reveal">
+                <div class="edu-icon"><i class="fas fa-pen-ruler"></i></div>
+                <span class="edu-badge" data-i18n="edu_badge_train">تدريب</span>
+                <h3 data-i18n="edu_nti">تدريب UI/UX Design — NTI</h3>
+                <p class="edu-desc" data-i18n="edu_nti_desc">تدريب متخصص في تصميم تجربة وواجهة المستخدم شمل: User Research، Information Architecture، Personas، User Flows، Wireframing، Prototyping، UI Design، Usability Testing، Figma.</p>
+            </div>
+            <div class="glass-card edu-card reveal">
+                <div class="edu-icon"><i class="fas fa-lightbulb"></i></div>
+                <span class="edu-badge" data-i18n="edu_badge_train">تدريب</span>
+                <h3 data-i18n="edu_creativa">تدريب UI/UX Design — Creativa / ITIDA / TIEC</h3>
+                <p class="edu-desc" data-i18n="edu_creativa_desc">برنامج تدريبي في تصميم واجهات وتجربة المستخدم، تعمّق فيه على منهجيات التصميم المتمحور حول المستخدم وأدوات Figma العملية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+        <h2 class="section-title reveal" data-i18n="projects_title">مشاريعي</h2>
+        <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- ================= CERTIFICATES ================= -->
+    <section id="certificates">
+        <h2 class="section-title reveal" data-i18n="certs_title">الشهادات والإنجازات</h2>
+        <p class="section-subtitle reveal" data-i18n="certs_sub">شهادات ودورات تدريبية في مجالات التكنولوجيا والتصميم وتحليل البيانات</p>
+        <div class="cert-grid" id="cert-grid"></div>
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+    <section id="gallery">
+        <h2 class="section-title reveal" data-i18n="gallery_title">لحظات مميزة</h2>
+        <div class="gallery-filters reveal" id="gallery-filters"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+        <h2 class="section-title reveal" data-i18n="contact_title">تواصل معي</h2>
+        <div class="contact-container">
+            <div class="glass-card contact-info-card reveal">
+                <h3 data-i18n="contact_info">معلومات الاتصال</h3>
+                <div class="contact-item">
+                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                    <div><p data-i18n="contact_phone">اتصل بي مباشرة</p><p dir="ltr"><a href="tel:01202022003">01202022003</a></p></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div><p data-i18n="contact_email">البريد الإلكتروني</p><p dir="ltr"><a href="mailto:alqtahmd070@gmail.com">alqtahmd070@gmail.com</a></p></div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><p data-i18n="contact_location">الموقع الحالي</p><p data-i18n="contact_location_val">شبرا النخلة، بلبيس، الشرقية، مصر</p></div>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <h3 data-i18n="contact_msg_t">أرسل لي رسالة سريعة</h3>
+                <p class="contact-msg" data-i18n="contact_msg">أنا جاهز دائماً للفرص الجديدة، ومشاريع العمل الحر، أو لمناقشة أفكار برمجية وتصميمية ذكية. اضغط على أي وسيلة اتصال أو حسابات السوشيال ميديا للوصول الفوري إليّ!</p>
+                <a href="mailto:alqtahmd070@gmail.com" class="btn btn-primary contact-btn"><i class="fas fa-paper-plane"></i> <span data-i18n="contact_email_btn">راسلني عبر الإيميل فوراً</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p data-i18n="footer">جميع الحقوق محفوظة &copy; 2026 | تم تطويره بكل حب وشغف بواسطة أحمد القط</p>
+    </footer>
+
+
+    <!-- ================= IMAGE LIGHTBOX ================= -->
+    <div id="lightbox" class="modal" aria-hidden="true">
+        <span class="modal-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-inner">
+            <button class="lb-nav lb-prev" onclick="lbNav(-1)" aria-label="Previous"><i class="fas fa-chevron-right"></i></button>
+            <div class="lb-stage">
+                <img class="modal-content" id="lightbox-img" src="" alt="">
+                <div class="lb-caption"><h3 id="lb-title"></h3><p id="lb-desc"></p></div>
+            </div>
+            <button class="lb-nav lb-next" onclick="lbNav(1)" aria-label="Next"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <div class="lb-controls">
+            <button onclick="lbZoomIn()" aria-label="Zoom In"><i class="fas fa-magnifying-glass-plus"></i></button>
+            <button onclick="lbZoomOut()" aria-label="Zoom Out"><i class="fas fa-magnifying-glass-minus"></i></button>
+            <button onclick="lbZoomReset()" aria-label="Reset"><i class="fas fa-arrows-rotate"></i></button>
+        </div>
+    </div>
+
+    <!-- ================= CERTIFICATE DETAILS MODAL ================= -->
+    <div id="cert-modal" class="modal" aria-hidden="true">
+        <span class="modal-close" onclick="closeCertModal()">&times;</span>
+        <div class="cert-modal-card glass-card" id="cert-modal-card"></div>
+    </div>
+
+    <!-- ================= CV VIEWER MODAL ================= -->
+    <div id="cv-modal" class="modal cv-modal" aria-hidden="true">
+        <div class="cv-toolbar">
+            <h3><i class="fas fa-file-pdf"></i> <span data-i18n="cv_title">السيرة الذاتية — Ahmed Elkot</span></h3>
+            <div class="cv-tools">
+                <button onclick="cvZoom(0.15)" aria-label="Zoom In"><i class="fas fa-magnifying-glass-plus"></i></button>
+                <button onclick="cvZoom(-0.15)" aria-label="Zoom Out"><i class="fas fa-magnifying-glass-minus"></i></button>
+                <button onclick="cvZoomReset()" aria-label="Reset"><i class="fas fa-arrows-rotate"></i></button>
+                <a id="cv-download" class="cv-dl" href="assets/cv/Ahmed-Elkot-CV.pdf" download="Ahmed-Elkot-CV.pdf"><i class="fas fa-download"></i> <span data-i18n="cv_download">تحميل CV</span></a>
+                <button class="cv-close" onclick="closeCvViewer()" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            </div>
+        </div>
+        <div class="cv-stage" id="cv-stage">
+            <iframe id="cv-frame" src="" title="CV Viewer"></iframe>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

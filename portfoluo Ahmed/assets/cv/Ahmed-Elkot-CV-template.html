@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Elkot — CV</title>
+
+<style>
+  @page { size: A4; margin: 12mm; }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --text: #111827;
+    --muted: #4b5563;
+    --line: #dbeafe;
+    --soft: #eff6ff;
+  }
+
+  body {
+    font-family: "Cairo", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: #f3f4f6;
+    line-height: 1.65;
+    font-size: 10.2pt;
+  }
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(17, 24, 39, .96);
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  }
+
+  .toolbar button {
+    border: 1px solid #60a5fa;
+    background: transparent;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 9pt;
+    transition: .25s ease;
+  }
+
+  .toolbar button.active,
+  .toolbar button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .cv {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 18px auto;
+    padding: 14mm;
+    background: #fff;
+    box-shadow: 0 8px 35px rgba(0,0,0,.12);
+  }
+
+  header {
+    text-align: center;
+    border-bottom: 3px solid var(--blue);
+    padding-bottom: 12px;
+    margin-bottom: 13px;
+  }
+
+  h1 {
+    font-size: 21pt;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: var(--blue-dark);
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+
+  .contact {
+    margin-top: 7px;
+    color: #374151;
+    font-size: 8.7pt;
+  }
+
+  .contact a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  section {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 11.8pt;
+    color: var(--blue-dark);
+    border-bottom: 1.3px solid var(--line);
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+  }
+
+  .item {
+    margin-bottom: 7px;
+  }
+
+  .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-title {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .muted {
+    color: var(--muted);
+    font-size: 9pt;
+  }
+
+  ul {
+    margin: 3px 18px 0 0;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+  }
+
+  .skill-group {
+    margin-bottom: 5px;
+  }
+
+  .skill-group b {
+    color: var(--text);
+  }
+
+  .tags span {
+    display: inline-block;
+    border: 1px solid #bfdbfe;
+    background: var(--soft);
+    color: #1e40af;
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-size: 8.2pt;
+    margin: 2px 1px;
+  }
+
+  .note {
+    max-width: 210mm;
+    margin: 0 auto 25px;
+    color: #6b7280;
+    font-size: 8.5pt;
+    text-align: center;
+  }
+
+  .lang-en {
+    display: none;
+  }
+
+  body.en {
+    direction: ltr;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  }
+
+  body.en .lang-ar {
+    display: none;
+  }
+
+  body.en .lang-en {
+    display: block;
+  }
+
+  body.en .contact {
+    direction: ltr;
+  }
+
+  @media (max-width: 800px) {
+    .cv {
+      width: calc(100% - 20px);
+      min-height: auto;
+      padding: 22px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .toolbar,
+    .note {
+      display: none !important;
+    }
+
+    .cv {
+      width: auto;
+      min-height: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="toolbar">
+  <button id="arBtn" class="active" onclick="setLanguage('ar')">العربية</button>
+  <button id="enBtn" onclick="setLanguage('en')">English</button>
+</div>
+
+<main class="cv">
+
+  <!-- ===================== ARABIC ===================== -->
+  <div class="lang-ar">
+
+    <header>
+      <h1>أحمد محمود إسماعيل إسماعيل القط</h1>
+      <div class="subtitle">UI/UX Designer | Data Analyst | Web Developer | MIS Student</div>
+      <div class="contact">
+        📞 01202022003 &nbsp; | &nbsp;
+        ✉️ alqtahmd070@gmail.com &nbsp; | &nbsp;
+        📍 بلبيس، الشرقية، مصر
+        <br>
+        LinkedIn: linkedin.com/in/ahmed-elkot-84b5a4312
+      </div>
+    </header>
+
+    <section>
+      <h2>البيانات الشخصية — Personal Information</h2>
+      <div class="grid">
+        <div><b>العمر:</b> 21 سنة</div>
+        <div><b>تاريخ الميلاد:</b> 6 سبتمبر 2005</div>
+        <div><b>الحالة:</b> طالب جامعي</div>
+        <div><b>سنة التخرج المتوقعة:</b> 2027</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>نبذة عني — About Me</h2>
+      <p>
+        طالب نظم معلومات إدارية (MIS) بالسنة الرابعة، مهتم بتصميم تجارب المستخدم
+        وتحليل البيانات وتطوير تطبيقات الويب. أعمل على تطوير مهاراتي في UI/UX Design
+        وFigma وتحليل البيانات باستخدام Excel وPower BI وSQL وPython/Pandas،
+        إلى جانب أساسيات تطوير الواجهات الأمامية والخلفية.
+      </p>
+      <p>
+        لدي اهتمام خاص بتحويل المتطلبات والمشكلات إلى حلول رقمية واضحة وسهلة الاستخدام،
+        مع الجمع بين التفكير التصميمي، فهم البيانات، والتقنيات البرمجية الحديثة.
+        كما أطور معرفتي بأدوات الذكاء الاصطناعي وهندسة التعليمات (Prompt Engineering)
+        واستخدامها لدعم عملية التعلم وتطوير المشاريع.
+      </p>
+    </section>
+
+    <section>
+      <h2>التعليم — Education</h2>
+      <div class="item">
+        <div class="item-title">معهد العبور العالي للإدارة والحاسبات ونظم المعلومات</div>
+        <div class="muted">
+          نظم المعلومات الإدارية (Management Information Systems - MIS)
+          — طالب بالسنة الرابعة — التخرج المتوقع 2027
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">مدرسة بلبيس الثانوية الصناعية للبنين</div>
+        <div class="muted">
+          دبلوم صناعي — قسم الكهرباء
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>التدريب والبرامج العملية — Training</h2>
+
+      <div class="item">
+        <div class="item-title">NTI — UI/UX Design Training</div>
+        <div class="muted">
+          تدريب في تصميم واجهة وتجربة المستخدم، شمل:
+          User Research، Information Architecture، Personas، User Flows،
+          Wireframing، Prototyping، UI Design، Usability Testing وFigma.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Creativa / ITIDA / TIEC — UI/UX Design Program</div>
+        <div class="muted">
+          برنامج عملي في تصميم تجربة المستخدم والواجهات، تصميم النماذج الأولية،
+          Figma، وفهم احتياجات المستخدم.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">NTI / Web & Software Development Training</div>
+        <div class="muted">
+          دراسة وتطبيق مفاهيم تطوير الويب، REST APIs، قواعد البيانات،
+          JavaScript، Node.js، Express.js وMongoDB ضمن مسار تطوير البرمجيات.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">DEPI — AI & Data Science</div>
+        <div class="muted">
+          برنامج تدريبي في الذكاء الاصطناعي وعلوم البيانات، مع الاهتمام بتحليل البيانات
+          والتقنيات المرتبطة بها.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Cisco — AI & English for IT</div>
+        <div class="muted">
+          تعلم أساسيات مرتبطة بالذكاء الاصطناعي واللغة الإنجليزية المتخصصة في مجال تكنولوجيا المعلومات.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Mahara-Tech</div>
+        <div class="muted">
+          دورات في UX Design وC Programming، إلى جانب مسارات تعليمية تقنية أخرى.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>المهارات التقنية — Technical Skills</h2>
+
+      <div class="skill-group">
+        <b>UI/UX Design:</b>
+        <div class="tags">
+          <span>Figma</span><span>User Research</span><span>Personas</span>
+          <span>User Flows</span><span>Wireframing</span><span>Prototyping</span>
+          <span>UI Design</span><span>Usability Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Data Analysis:</b>
+        <div class="tags">
+          <span>Excel</span><span>Power BI</span><span>SQL</span>
+          <span>Python</span><span>Pandas</span><span>Data Visualization</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Web Development:</b>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>React.js</span><span>Node.js</span><span>Express.js</span>
+          <span>REST APIs</span><span>TypeScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Databases & Tools:</b>
+        <div class="tags">
+          <span>MySQL</span><span>MongoDB</span><span>PostgreSQL</span>
+          <span>Git</span><span>GitHub</span><span>Postman</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>AI & Productivity:</b>
+        <div class="tags">
+          <span>AI Tools</span><span>Prompt Engineering</span>
+          <span>AI-assisted Development</span><span>Agentic Workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>الشهادات والكورسات — Certificates & Courses</h2>
+      <ul>
+        <li><b>HCIA-AI V4.0 Course — Certificate of Completion</b> — Huawei ICT Academy / IFCE</li>
+        <li><b>UI/UX Design Training</b> — National Telecommunication Institute (NTI)</li>
+        <li><b>UI/UX Design Program</b> — Creativa / ITIDA / TIEC</li>
+        <li><b>Introduction to Microsoft SQL Server Databases</b> — Edraak</li>
+        <li><b>تطوير تطبيقات قواعد البيانات باستخدام Java (JDBC)</b> — ITI / مهارة تك</li>
+        <li><b>Microsoft Excel Professional Course</b> — منصة معارف</li>
+        <li><b>Full HTML in Arabic | HTML for Beginners</b> — منصة معارف</li>
+        <li><b>AI & English for IT</b> — Cisco</li>
+        <li><b>C Programming From Basics to Mastery</b> — Mahara-Tech</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>برامج ومبادرات تقنية — Programs & Activities</h2>
+      <ul>
+        <li>Google Build with AI Masr — برنامج/فعالية مرتبطة بتطوير حلول باستخدام الذكاء الاصطناعي.</li>
+        <li>Microsoft Agent-A-Thon — مشاركة/تعلم مرتبط ببناء حلول ووكلاء باستخدام تقنيات الذكاء الاصطناعي.</li>
+        <li>Digital Pioneers — اهتمام بمسار Data / AI والتطوير التقني.</li>
+        <li>GDG Cairo / DevFest — اهتمام بالمجتمعات التقنية وفعاليات المطورين والتعلم من خبراء الصناعة.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>المشاريع — Projects</h2>
+
+      <div class="item">
+        <div class="item-title">Pharma Car</div>
+        <div class="muted">
+          مشروع يركز على تسهيل الوصول إلى الأدوية والصيدليات والخدمات المرتبطة بها،
+          مع الاهتمام بتجربة المستخدم وتصميم رحلة الاستخدام.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">InsightIQ</div>
+        <div class="muted">
+          مشروع Business Intelligence لتحويل البيانات إلى Dashboards ورؤى واضحة
+          تساعد على فهم البيانات ودعم اتخاذ القرار.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Educational Portal</div>
+        <div class="muted">
+          فكرة مشروع تخرج لمنصة تعليمية رقمية تهدف إلى تنظيم المحتوى والخدمات التعليمية
+          في تجربة استخدام بسيطة.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>اللغات — Languages</h2>
+      <div class="grid">
+        <div><b>العربية:</b> اللغة الأم</div>
+        <div><b>الإنجليزية:</b> مستوى عملي/تقني قيد التطوير</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>الاهتمامات المهنية — Career Interests</h2>
+      <div class="tags">
+        <span>UI/UX Design</span>
+        <span>Data Analysis</span>
+        <span>Web Development</span>
+        <span>Artificial Intelligence</span>
+        <span>Machine Learning</span>
+        <span>Product Design</span>
+        <span>Technology Communities</span>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div class="lang-en">
+
+    <header>
+      <h1>Ahmed Mahmoud Ismail Ismail Elkot</h1>
+      <div class="subtitle">UI/UX Designer | Data Analyst | Web Developer | MIS Student</div>
+      <div class="contact">
+        📞 01202022003 &nbsp; | &nbsp;
+        ✉️ alqtahmd070@gmail.com &nbsp; | &nbsp;
+        📍 Belbeis, Sharqia, Egypt
+        <br>
+        LinkedIn: linkedin.com/in/ahmed-elkot-84b5a4312
+      </div>
+    </header>
+
+    <section>
+      <h2>Personal Information</h2>
+      <div class="grid">
+        <div><b>Age:</b> 21</div>
+        <div><b>Date of Birth:</b> 6 September 2005</div>
+        <div><b>Status:</b> University Student</div>
+        <div><b>Expected Graduation:</b> 2027</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Fourth-year Management Information Systems (MIS) student interested in
+        UI/UX Design, Data Analysis, Web Development, and AI-related technologies.
+        I am developing practical skills in Figma, user-centered design, Excel,
+        Power BI, SQL, Python/Pandas, and web technologies.
+      </p>
+      <p>
+        I enjoy turning requirements and real-world problems into clear, practical,
+        and user-friendly digital solutions. My learning combines design thinking,
+        data understanding, and modern web technologies, while I also explore
+        AI tools, prompt engineering, and AI-assisted development workflows.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-title">Obour Higher Institute for Management, Computers & Information Systems</div>
+        <div class="muted">
+          Management Information Systems (MIS) — Fourth Year Student —
+          Expected Graduation: 2027
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Belbeis Industrial Secondary School for Boys</div>
+        <div class="muted">
+          Industrial Diploma — Electricity Section
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Training & Practical Programs</h2>
+
+      <div class="item">
+        <div class="item-title">NTI — UI/UX Design Training</div>
+        <div class="muted">
+          Training covering User Research, Information Architecture, Personas,
+          User Flows, Wireframing, Prototyping, UI Design, Usability Testing, and Figma.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Creativa / ITIDA / TIEC — UI/UX Design Program</div>
+        <div class="muted">
+          Practical training in user-centered design, UI design, interactive prototypes,
+          Figma, and understanding user needs.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">NTI / Web & Software Development Training</div>
+        <div class="muted">
+          Learning and practical work covering web development, REST APIs,
+          databases, JavaScript, Node.js, Express.js, and MongoDB.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">DEPI — AI & Data Science</div>
+        <div class="muted">
+          Training track related to Artificial Intelligence and Data Science,
+          with a focus on data and technology skills.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Cisco — AI & English for IT</div>
+        <div class="muted">
+          Learning covering AI fundamentals and technical English for the IT field.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Mahara-Tech</div>
+        <div class="muted">
+          Courses in UX Design and C Programming, along with other technical learning paths.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+
+      <div class="skill-group">
+        <b>UI/UX Design:</b>
+        <div class="tags">
+          <span>Figma</span><span>User Research</span><span>Personas</span>
+          <span>User Flows</span><span>Wireframing</span><span>Prototyping</span>
+          <span>UI Design</span><span>Usability Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Data Analysis:</b>
+        <div class="tags">
+          <span>Excel</span><span>Power BI</span><span>SQL</span>
+          <span>Python</span><span>Pandas</span><span>Data Visualization</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Web Development:</b>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>React.js</span><span>Node.js</span><span>Express.js</span>
+          <span>REST APIs</span><span>TypeScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>Databases & Tools:</b>
+        <div class="tags">
+          <span>MySQL</span><span>MongoDB</span><span>PostgreSQL</span>
+          <span>Git</span><span>GitHub</span><span>Postman</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b>AI & Productivity:</b>
+        <div class="tags">
+          <span>AI Tools</span><span>Prompt Engineering</span>
+          <span>AI-assisted Development</span><span>Agentic Workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certificates & Courses</h2>
+      <ul>
+        <li><b>HCIA-AI V4.0 Course — Certificate of Completion</b> — Huawei ICT Academy / IFCE</li>
+        <li><b>UI/UX Design Training</b> — National Telecommunication Institute (NTI)</li>
+        <li><b>UI/UX Design Program</b> — Creativa / ITIDA / TIEC</li>
+        <li><b>Introduction to Microsoft SQL Server Databases</b> — Edraak</li>
+        <li><b>Java Database Application Development (JDBC)</b> — ITI / Mahara-Tech</li>
+        <li><b>Microsoft Excel Professional Course</b> — Maaref Platform</li>
+        <li><b>Full HTML in Arabic | HTML for Beginners</b> — Maaref Platform</li>
+        <li><b>AI & English for IT</b> — Cisco</li>
+        <li><b>C Programming From Basics to Mastery</b> — Mahara-Tech</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technology Programs & Activities</h2>
+      <ul>
+        <li>Google Build with AI Masr — AI-focused learning and practical technology activities.</li>
+        <li>Microsoft Agent-A-Thon — learning and activities related to building AI-powered agents.</li>
+        <li>Digital Pioneers — interest in Data / AI and technical development tracks.</li>
+        <li>GDG Cairo / DevFest — interest in developer communities, technical events, and learning from industry experts.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="item">
+        <div class="item-title">Pharma Car</div>
+        <div class="muted">
+          A project focused on improving access to medicines, pharmacies,
+          and related services, with attention to user experience and user journeys.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">InsightIQ</div>
+        <div class="muted">
+          A Business Intelligence project focused on transforming data into
+          dashboards and clear insights that support data understanding and decision-making.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Educational Portal</div>
+        <div class="muted">
+          A graduation-project concept for a digital educational platform designed
+          to organize learning content and services through a simple user experience.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <div class="grid">
+        <div><b>Arabic:</b> Native</div>
+        <div><b>English:</b> Practical / Technical level in development</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Career Interests</h2>
+      <div class="tags">
+        <span>UI/UX Design</span>
+        <span>Data Analysis</span>
+        <span>Web Development</span>
+        <span>Artificial Intelligence</span>
+        <span>Machine Learning</span>
+        <span>Product Design</span>
+        <span>Technology Communities</span>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<p class="note">
+  لعمل PDF: اختر اللغة المطلوبة ثم اضغط Ctrl+P → Save as PDF.
+  يمكنك حفظ النسخة العربية والإنجليزية كملفين منفصلين.
+</p>
+
+<script>
+function setLanguage(lang) {
+  const isEnglish = lang === "en";
+
+  document.body.classList.toggle("en", isEnglish);
+  document.documentElement.lang = isEnglish ? "en" : "ar";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+
+  document.getElementById("arBtn").classList.toggle("active", !isEnglish);
+  document.getElementById("enBtn").classList.toggle("active", isEnglish);
+
+  document.title = isEnglish
+    ? "Ahmed Elkot — CV"
+    : "أحمد القط — السيرة الذاتية";
+}
+</script>
+
+</body>
+</html>
